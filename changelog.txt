@@ -1,0 +1,4 @@
+﻿- Adjusted text sizes
+- Added Author line
+- Added Mod.Call support for author
+- Forced Subtitle to be used

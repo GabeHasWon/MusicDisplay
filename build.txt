@@ -1,0 +1,4 @@
+displayName = Music Display
+author = GabeHasWon
+version = 1.0.0.3
+side = Client
