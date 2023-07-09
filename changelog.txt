@@ -2,3 +2,5 @@
 - Added Author line
 - Added Mod.Call support for author
 - Forced Subtitle to be used
+- Created GitHub
+- Added Left display option
