@@ -1,74 +1,45 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace MusicDisplay;
 
-internal class MusicDatabase : ILoadable
+internal class MusicDatabase : ModSystem
 {
+    private static MusicText UnknownTrack;
+
     Dictionary<short, MusicText> _tracksById = new();
 
-    public void Load(Mod mod)
+    public override void PostAddRecipes()
     {
-        Type musicID = typeof(MusicID);
-        
-        foreach (var item in musicID.GetFields())
+        for (short i = 1; i < MusicID.Count; ++i)
         {
-            short id = (short)item.GetValue(null);
-            string rawName = item.Name;
-
-            if (id != MusicID.Count)
-                _tracksById.Add(id, new(AddSpaces(rawName), "by Scott Lloyd Shelly", "Terraria"));
+            var trackName = Language.GetText("Mods.MusicDisplay.TrackNames.Vanilla." + i);
+            var byLine = Language.GetText("Mods.MusicDisplay.TrackNames.VanillaByLine");
+            var terraria = Language.GetText("Mods.MusicDisplay.TrackNames.TerrariaName");
+            _tracksById.Add(i, new(trackName, byLine, terraria));
         }
+
+        UnknownTrack = new MusicText(Language.GetText("Mods.MusicDisplay.TrackNames.UnknownTrack"), LocalizedText.Empty, LocalizedText.Empty);
     }
 
-    private static string AddSpaces(string text)
-    {
-        if (string.IsNullOrWhiteSpace(text))
-            return "";
-
-        StringBuilder newText = new(text.Length * 2);
-        newText.Append(text[0]);
-
-        for (int i = 1; i < text.Length; i++)
-        {
-            if (char.IsUpper(text[i]) && text[i - 1] != ' ')
-                newText.Append(' ');
-
-            newText.Append(text[i]);
-        }
-        return newText.ToString();
-    }
-
-    public void Unload()
-    {
-        _tracksById = null;
-    }
+    public override void Unload() => _tracksById = null;
 
     internal static MusicText GetMusicText(short lastMusicSlot)
     {
         var db = ModContent.GetInstance<MusicDatabase>();
 
         if (!db._tracksById.ContainsKey(lastMusicSlot))
-            return new MusicText("(Unknown Track)", "", "", true);
+            return UnknownTrack;
 
         return db._tracksById[lastMusicSlot];
     }
 
     internal static void AddMusic(object id, object name, object subTitle)
     {
-        if (id is not short realID)
-            throw new ArgumentException("id is not a short!");
-
-        if (name is not string realName)
-            throw new ArgumentException("name is not a string!");
-
-        string realSub = subTitle is string ? (string)subTitle : string.Empty;
-
-        var db = ModContent.GetInstance<MusicDatabase>();
-        db._tracksById.Add(realID, new MusicText(realName, "", realSub));
+        throw new Exception("[MusicDisplay] Use the short, LocalizedText, LocalizedText, LocalizedText overload! This overload is outdated.");
     }
 
     internal static void AddMusic(object id, object name, object author, object subTitle)
@@ -76,13 +47,29 @@ internal class MusicDatabase : ILoadable
         if (id is not short realID)
             throw new ArgumentException("id is not a short!");
 
-        if (author is not string realAuthor)
-            throw new ArgumentException("id is not a short!");
+        if (author is not LocalizedText realAuthor)
+        {
+            if (author is string strAuth)
+                realAuthor = Language.GetText(strAuth);
+            else
+                throw new ArgumentException("author is not a LocalizedText or a localization key!");
+        }
 
-        if (name is not string realName)
-            throw new ArgumentException("name is not a string!");
+        if (name is not LocalizedText realName)
+        {
+            if (name is string strName)
+                realName = Language.GetText(strName);
+            else
+                throw new ArgumentException("name is not a LocalizedText or a localization key!");
+        }
 
-        string realSub = subTitle is string ? (string)subTitle : string.Empty;
+        if (subTitle is not LocalizedText realSub)
+        {
+            if (subTitle is string strSub)
+                realSub = Language.GetText(strSub);
+            else
+                throw new ArgumentException("subTitle is not a LocalizedText or a localization key!");
+        }
 
         var db = ModContent.GetInstance<MusicDatabase>();
         db._tracksById.Add(realID, new MusicText(realName, realAuthor, realSub));

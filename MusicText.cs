@@ -1,13 +1,15 @@
-﻿namespace MusicDisplay;
+﻿using Terraria.Localization;
+
+namespace MusicDisplay;
 
 internal readonly struct MusicText
 {
-    public readonly string MainText;
-    public readonly string Author;
-    public readonly string Subtitle;
+    public readonly LocalizedText MainText;
+    public readonly LocalizedText Author;
+    public readonly LocalizedText Subtitle;
     public readonly bool IsUnknown;
 
-    public MusicText(string mainText, string author, string subtitle, bool isUnknown = false)
+    public MusicText(LocalizedText mainText, LocalizedText author, LocalizedText subtitle, bool isUnknown = false)
     {
         MainText = mainText;
         Author = author;

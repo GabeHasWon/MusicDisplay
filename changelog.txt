@@ -1,6 +1,6 @@
-﻿- Adjusted text sizes
-- Added Author line
-- Added Mod.Call support for author
-- Forced Subtitle to be used
-- Created GitHub
-- Added Left display option
+﻿- Clarified it works on 1.4.3 and 1.4.4
+- Fixed a ton of dumb nonsense on 1.4.3
+- Updated the mod to use LocalizedTexts instead of plain strings so localization is updated if it's changed in-game
+- Updated documentation
+- Removed old title, subtitle overload for Mod.Call AddMusic
+- Modified readme lightly

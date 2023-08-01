@@ -14,6 +14,8 @@ internal class DisplayConfig : ModConfig
 
     public override ConfigScope Mode => ConfigScope.ClientSide;
 
+	//Label/Tooltip attributes stay so it supports 1.4.3 without whatever garbage I have to do otherwise.
+
 	[Label("Hide Unknown Music")]
 	[Tooltip("If true, unknown music tracks will simply not be displayed. Otherwise, \"Unknown Track\" will show in place of the track name.")]
 	[DefaultValue(true)]
@@ -21,7 +23,7 @@ internal class DisplayConfig : ModConfig
 
 	[Label("Display Placement")]
 	[Tooltip("Controls where the display is showcased.")]
-	[DefaultValue(Placements.Top)]
+	[DefaultValue(Placements.Bottom)]
 	[Slider]
 	public Placements Placement { get; set; }
 

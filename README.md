@@ -6,64 +6,48 @@ A: Mods add in their own compatibility. So if you want their mod to support this
 
 It's a fairly simple process so hopefully they listen.
 
+Q: Is this on 1.4.4?
+
+A: Yes! The mod works on 1.4.3 and 1.4.4.
+
 ## Compatibility
 Adding compatibility is simple.
 Adding a track is as follows: 
 
 ```
 //Where display == MusicDisplay's Mod instance
-display.Call("AddMusic", (short)MusicLoader.GetMusicSlot(Mod, "path/to/music"), "title", "author", "subtitle");
+display.Call("AddMusic", short musicId, LocalizedText title, LocalizedText author, LocalizedText subtitle);
+//OR
+display.Call("AddMusic", short musicId, string titleKey, string authorKey, string subtitleKey);
+```
+
+The types of these are interchangeable, so if you really want to, you could do Language.GetText("x"), "y", "z" or whatever.
+
+An example would be
+
+```
+
+display.Call("AddMusic", (short)MusicLoader.GetMusicSlot(Mod, "Sounds/Music/VibrantHorizon"), 
+    Language.GetText("Mods.Verdant.TrackNames.VibrantHorizon.Name"), 
+    Language.GetText("Mods.Verdant.TrackNames.VibrantHorizon.Author"), 
+    Language.GetText("Mods.Verdant.TrackNames.ModName"));
 ```
 
 This gives the given track a display of
 
 ```
-Current Music
+Current Music:
 Title
 Author
 Subtitle
 ```
 
-For a further example, this is the code used in Spirit: 
+The overload that skipped the author parameter has been REMOVED. DO NOT use it, and update your code. If you wish to skip the Author, simply write "" or LocalizedText.Empty in its place.
 
-```
-public override void PostSetupContent()
-{
-  if (!ModLoader.TryGetMod("MusicDisplay", out Mod display))
-    return;
 
-  void AddMusic(string path, string name, string author) => display.Call("AddMusic", (short)MusicLoader.GetMusicSlot(Mod, path), name, "by " + author, "Spirit Mod");
+For modders that used the string overloads, the mod still functions the same, though you should replace your old code with either localization keys or LocalizedTexts directly.
 
-  AddMusic("Sounds/Music/GraniteBiome", "Resounding Stones (Granite Theme)", "salvati");
-  //Repeat for every track in the mod
-}
-```
-
-This would display the following:
-
-```
-Current Music:
-Resounding Stones (Granite Theme)
-by salvati
-Spirit Mod
-```
-
---- 
-
-An overload that omits the author is also available, though I do recommend using the author line for a cleaner display.
-Code is as follows:
-
-```
-display.Call("AddMusic", (short)MusicLoader.GetMusicSlot(Mod, "path/to/music"), "title", "subtitle");
-```
-
-This would display as
-
-```
-Current Music:
-Track Name
-Subtitle
-```
+This way, other languages have support for your content easily and update properly.
 
 ## Issues/Suggestions
 

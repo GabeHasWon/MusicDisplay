@@ -33,19 +33,19 @@ internal static class DisplayDrawing
 		GetStartPosition(ModContent.GetInstance<DisplayConfig>().Placement, out float x, out float y, out Vector2 originMod);
 		string title = "Current Music:";
 		var font = FontAssets.DeathText.Value;
-
+		
 		var size = FontAssets.DeathText.Value.MeasureString(title);
 		ChatManager.DrawColorCodedStringWithShadow(Main.spriteBatch, font, title, new Vector2(x, y - 40), new Color(120, 120, 120) * alpha, 0, size * originMod, new(0.4f));
 
-		size = FontAssets.DeathText.Value.MeasureString(text.MainText);
-		ChatManager.DrawColorCodedStringWithShadow(Main.spriteBatch, font, text.MainText, new Vector2(x, y), Color.White * alpha, 0, size * originMod, new(0.85f));
+		size = FontAssets.DeathText.Value.MeasureString(text.MainText.Value);
+		ChatManager.DrawColorCodedStringWithShadow(Main.spriteBatch, font, text.MainText.Value, new Vector2(x, y), Color.White * alpha, 0, size * originMod, new(0.85f));
 
-		size = FontAssets.DeathText.Value.MeasureString(text.Author);
-		ChatManager.DrawColorCodedStringWithShadow(Main.spriteBatch, font, text.Author, new Vector2(x, y + 46), new Color(230, 230, 230) * alpha, 0, size * originMod, new(0.65f));
+		size = FontAssets.DeathText.Value.MeasureString(text.Author.Value);
+		ChatManager.DrawColorCodedStringWithShadow(Main.spriteBatch, font, text.Author.Value, new Vector2(x, y + 46), new Color(230, 230, 230) * alpha, 0, size * originMod, new(0.65f));
 
-		size = FontAssets.DeathText.Value.MeasureString(text.Subtitle);
-		var subtitlePos = new Vector2(x, text.Author is null || text.Author == string.Empty ? y + 40 : y + 86);
-		ChatManager.DrawColorCodedStringWithShadow(Main.spriteBatch, font, text.Subtitle, subtitlePos, new Color(180, 180, 180) * alpha, 0, size * originMod, new(0.5f));
+		size = FontAssets.DeathText.Value.MeasureString(text.Subtitle.Value);
+		var subtitlePos = new Vector2(x, text.Author is null || text.Author.Value == string.Empty ? y + 40 : y + 86);
+		ChatManager.DrawColorCodedStringWithShadow(Main.spriteBatch, font, text.Subtitle.Value, subtitlePos, new Color(180, 180, 180) * alpha, 0, size * originMod, new(0.5f));
 	}
 
 	private static void GetStartPosition(DisplayConfig.Placements placement, out float x, out float y, out Vector2 originMod)

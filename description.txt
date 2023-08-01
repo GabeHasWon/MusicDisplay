@@ -1,11 +1,9 @@
 --- Music Display ---
+for tModLoader 1.4.3 and 1.4.4
 by GabeHasWon
 
 A simple mod that shows the currently playing music on-screen when the music changes.
 This has support for all vanilla tracks, alongside support for other mods to add in their own.
-As a developer for the Spirit Mod, all of Spirit's tracks have support for this already.
-
-I will likely add more config and more customization in the future, but for now it's a simple little thing.
 Enjoy!
 
 - Socials -
@@ -16,27 +14,5 @@ Please consider supporting! It helps a lot! Either way, thanks for playing!
 
 -- Compatibility --
 
-Adding compatibility is simple.
-Adding a track is as follows: 
-
-//Where display == MusicDisplay's Mod instance
-display.Call("AddMusic", (short)MusicLoader.GetMusicSlot(Mod, "path/to/music"), "title", "subtitle");
-
-This gives the given track a display of
-
-	Current Music
-		Title
-	  Subtitle
-
-For a further example, this is the code used in Spirit: 
-
-	public override void PostSetupContent()
-	{
-		if (!ModLoader.TryGetMod("MusicDisplay", out Mod display))
-			return;
-
-		void AddMusic(string path, string name) => display.Call("AddMusic", (short)MusicLoader.GetMusicSlot(Mod, path), name, "Spirit Mod");
-
-		AddMusic("Sounds/Music/GraniteBiome", "salvati - Resounding Stones (Granite Theme)");
-		//Repeat for every track in the mod
-	}
+If you're a mod developer and want to add compatibility, or a player and want to ask for compatibility, read this:
+https://github.com/GabeHasWon/MusicDisplay/blob/master/README.md

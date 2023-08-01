@@ -14,7 +14,7 @@ internal class DisplaySystem : ModSystem
 
 	float alpha = 0;
 	TimeSpan setTime = TimeSpan.MinValue;
-	MusicText text = new(string.Empty, string.Empty, string.Empty, false);
+	MusicText text = default;
 
 	short lastMusicSlot = -1;
 
