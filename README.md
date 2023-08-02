@@ -51,7 +51,7 @@ This way, other languages have support for your content easily and update proper
 
 ### In-Use Example
 
-[Here's the code that I use in another project, Verdant.](https://github.com/GabeHasWon/VerdantMod/blob/main/Systems/ModCompat/MusicDisplayCalls.cs)
+[Here's the code that I use in another project, Verdant.](https://github.com/GabeHasWon/VerdantMod/blob/1.4.4/Systems/ModCompat/MusicDisplayCalls.cs)
 
 It adds all 4 tracks easily and quickly. It also is pretty consistently up to date with this mod, if you need a little more help.
 
