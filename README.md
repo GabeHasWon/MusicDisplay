@@ -49,6 +49,12 @@ For modders that used the string overloads, the mod still functions the same, th
 
 This way, other languages have support for your content easily and update properly.
 
+### In-Use Example
+
+[Here's the code that I use in another project, Verdant.](https://github.com/GabeHasWon/VerdantMod/blob/main/Systems/ModCompat/MusicDisplayCalls.cs)
+
+It adds all 4 tracks easily and quickly. It also is pretty consistently up to date with this mod, if you need a little more help.
+
 ## Issues/Suggestions
 
 Feel free to report issues or ask for API suggestions here on this GitHub, on the Steam page, or wherever I am on Discord (@gabehaswon).
