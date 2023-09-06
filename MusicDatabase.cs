@@ -19,6 +19,21 @@ internal class MusicDatabase : ModSystem
             var trackName = Language.GetText("Mods.MusicDisplay.TrackNames.Vanilla." + i);
             var byLine = Language.GetText("Mods.MusicDisplay.TrackNames.VanillaByLine");
             var terraria = Language.GetText("Mods.MusicDisplay.TrackNames.TerrariaName");
+
+            if (i >= MusicID.OtherworldlyRain && i <= MusicID.OtherworldlyHallow)
+            {
+                terraria = Language.GetText("Mods.MusicDisplay.TrackNames.OtherworldName");
+
+                if (i == MusicID.OtherworldlyJungle)
+                    byLine = Language.GetText("Mods.MusicDisplay.TrackNames.OtherworldTinaGuo");
+                else if (i == MusicID.OtherworldlyUnderground)
+                    byLine = Language.GetText("Mods.MusicDisplay.TrackNames.OtherworldJeffBall");
+                else if (i == MusicID.OtherworldlyBoss2 || i == MusicID.OtherworldlyLunarBoss)
+                    byLine = Language.GetText("Mods.MusicDisplay.TrackNames.OtherworldFrankKlepacki");
+                else
+                    byLine = Language.GetText("Mods.MusicDisplay.TrackNames.OtherworldByLine");
+            }
+
             _tracksById.Add(i, new(trackName, byLine, terraria));
         }
 

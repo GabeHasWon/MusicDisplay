@@ -35,7 +35,12 @@ Mods: {
 
 		TrackNames: {
 			VanillaByLine: by Scott Lloyd Shelly
+			OtherworldByLine: by Jeff Broadbent, Jonathan van den Wijngaarden and James Hannigan
+			OtherworldJeffBall: by Jeff Broadbent, Jonathan van den Wijngaarden, James Hannigan and Jeff Ball
+			OtherworldTinaGuo: by Jeff Broadbent, Jonathan van den Wijngaarden, James Hannigan and Tina Guo
+			OtherworldFrankKlepacki: by Jeff Broadbent, Jonathan van den Wijngaarden, James Hannigan and Frank Klepacki
 			TerrariaName: Terraria
+			OtherworldName: Terraria Otherworld
 			UnknownTrack: (Unknown Track)
 
 			Vanilla: {
@@ -98,33 +103,33 @@ Mods: {
 				59: Morning Rain
 				60: Console Menu
 				61: Underground Desert
-				62: Otherworldly Rain
-				63: Otherworldly Day
-				64: Otherworldly Night
-				65: Otherworldly Underground
-				66: Otherworldly Desert
-				67: Otherworldly Ocean
-				68: Otherworldly Mushrooms
-				69: Otherworldly Dungeon
-				70: Otherworldly Space
-				71: Otherworldly Underworld
-				72: Otherworldly Snow
-				73: Otherworldly Corruption
-				74: Otherworldly Underground Corrption
-				75: Otherworldly Crimson
-				76: Otherworldly Underground Crimson
-				77: Otherworldly Ice
-				78: Otherworldly Underground Hallow
-				79: Otherworldly Eerie
-				80: Otherworldly Boss 2
-				81: Otherworldly Boss 1
-				82: Otherworldly Invasion
-				83: Otherworldly Towers
-				84: Otherworldly Lunar Boss
-				85: Otherworldly Plantera
-				86: Otherworldly Jungle
+				62: Prelude (Otherworldly Rain)
+				63: Every Adventure Has a Beginning (Otherworldly Day)
+				64: Night Falls, Darkness Emerge (Otherworldly Night)
+				65: Below the Surface (Otherworldly Underground)
+				66: Secret of the Sands (Otherworldly Desert)
+				67: Enchanted Blue (Otherworldly Ocean)
+				68: Celestial Caverns (Otherworldly Mushrooms)
+				69: Ancient Citadel (Otherworldly Dungeon)
+				70: The Endless Void (Otherworldly Space)
+				71: Journey to the Core (Otherworldly Underworld)
+				72: Glimmers of Vibrance (Otherworldly Snow)
+				73: Shadows of Corruption (Otherworldly Corruption)
+				74: Decay and Corrosion (Otherworldly Underground Corruption)
+				75: Blood Crawlers (Otherworldly Crimson)
+				76: Crimson Chasm (Otherworldly Underground Crimson)
+				77: A Sweet Menace (Otherworldly Ice)
+				78: Twisted Virtue (Otherworldly Underground Hallow)
+				79: Enter Darkness (Otherworldly Eerie)
+				80: Sinkholes of Darkness (Otherworldly Boss 2)
+				81: Behold the OctoEye (Otherworldly Boss 1)
+				82: Fighting off the Invasion (Otherworldly Invasion)
+				83: Fighting the Night (Otherworldly Towers)
+				84: Consumed by Darkness (Otherworldly Lunar Boss)
+				85: Rage Of Tarunnk (Otherworldly Plantera)
+				86: Sky Guardian (Otherworldly Jungle)
 				87: Otherworldly Wall of Flesh
-				88: Otherworldly Hallow
+				88: Postlude - Credits (Otherworldly Hallow)
 				89: Credits
 				90: Deerclops
 				91: Shimmer
