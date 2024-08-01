@@ -10,7 +10,7 @@ internal class MusicDatabase : ModSystem
 {
     private static MusicText UnknownTrack;
 
-    Dictionary<short, MusicText> _tracksById = new();
+    Dictionary<short, MusicText> _tracksById = [];
 
     public override void PostAddRecipes()
     {
@@ -37,7 +37,7 @@ internal class MusicDatabase : ModSystem
             _tracksById.Add(i, new(trackName, byLine, terraria));
         }
 
-        UnknownTrack = new MusicText(Language.GetText("Mods.MusicDisplay.TrackNames.UnknownTrack"), LocalizedText.Empty, LocalizedText.Empty);
+        UnknownTrack = new MusicText(Language.GetText("Mods.MusicDisplay.TrackNames.UnknownTrack"), LocalizedText.Empty, LocalizedText.Empty, true);
     }
 
     public override void Unload() => _tracksById = null;
@@ -46,10 +46,7 @@ internal class MusicDatabase : ModSystem
     {
         var db = ModContent.GetInstance<MusicDatabase>();
 
-        if (!db._tracksById.ContainsKey(lastMusicSlot))
-            return UnknownTrack;
-
-        return db._tracksById[lastMusicSlot];
+        return !db._tracksById.TryGetValue(lastMusicSlot, out MusicText value) ? UnknownTrack : value;
     }
 
     internal static void AddMusic(object id, object name, object subTitle)

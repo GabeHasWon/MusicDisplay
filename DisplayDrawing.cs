@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.GameContent;
+using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.UI.Chat;
 
@@ -23,7 +24,7 @@ internal static class DisplayDrawing
 			if (adjDelta < 3f)
 				alpha = adjDelta / 3f;
 			else if (adjDelta > 5f && adjDelta <= 8f)
-				alpha = 1 - ((adjDelta - 5f) / 3f);
+				alpha = 1 - (adjDelta - 5f) / 3f;
 			else if (adjDelta > 8)
 				alpha = 0;
 		}
@@ -31,7 +32,7 @@ internal static class DisplayDrawing
 			alpha = ModContent.GetInstance<DisplayConfig>().AlwaysOnOpacity;
 
 		GetStartPosition(ModContent.GetInstance<DisplayConfig>().Placement, out float x, out float y, out Vector2 originMod);
-		string title = "Current Music:";
+		string title = Language.GetTextValue("Mods.MusicDisplay.CurrentMusic");
 		var font = FontAssets.DeathText.Value;
 		
 		var size = FontAssets.DeathText.Value.MeasureString(title);
