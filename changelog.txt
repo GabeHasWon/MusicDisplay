@@ -1,1 +1,1 @@
-﻿- Localized "Current Text:"
+﻿- Added Text Scale config option

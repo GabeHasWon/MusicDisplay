@@ -34,19 +34,22 @@ internal static class DisplayDrawing
 		GetStartPosition(ModContent.GetInstance<DisplayConfig>().Placement, out float x, out float y, out Vector2 originMod);
 		string title = Language.GetTextValue("Mods.MusicDisplay.CurrentMusic");
 		var font = FontAssets.DeathText.Value;
-		
-		var size = FontAssets.DeathText.Value.MeasureString(title);
-		ChatManager.DrawColorCodedStringWithShadow(Main.spriteBatch, font, title, new Vector2(x, y - 40), new Color(120, 120, 120) * alpha, 0, size * originMod, new(0.4f));
+		float scale = ModContent.GetInstance<DisplayConfig>().TextScale;
+
+		y -= scale * 50;
+
+        var size = FontAssets.DeathText.Value.MeasureString(title);
+		ChatManager.DrawColorCodedStringWithShadow(Main.spriteBatch, font, title, new Vector2(x, y - 40 * scale), new Color(120, 120, 120) * alpha, 0, size * originMod, new Vector2(0.4f) * scale);
 
 		size = FontAssets.DeathText.Value.MeasureString(text.MainText.Value);
-		ChatManager.DrawColorCodedStringWithShadow(Main.spriteBatch, font, text.MainText.Value, new Vector2(x, y), Color.White * alpha, 0, size * originMod, new(0.85f));
+		ChatManager.DrawColorCodedStringWithShadow(Main.spriteBatch, font, text.MainText.Value, new Vector2(x, y), Color.White * alpha, 0, size * originMod, new Vector2(0.85f) * scale);
 
 		size = FontAssets.DeathText.Value.MeasureString(text.Author.Value);
-		ChatManager.DrawColorCodedStringWithShadow(Main.spriteBatch, font, text.Author.Value, new Vector2(x, y + 46), new Color(230, 230, 230) * alpha, 0, size * originMod, new(0.65f));
+		ChatManager.DrawColorCodedStringWithShadow(Main.spriteBatch, font, text.Author.Value, new Vector2(x, y + 46 * scale), new Color(230, 230, 230) * alpha, 0, size * originMod, new Vector2(0.65f) * scale);
 
 		size = FontAssets.DeathText.Value.MeasureString(text.Subtitle.Value);
-		var subtitlePos = new Vector2(x, text.Author is null || text.Author.Value == string.Empty ? y + 40 : y + 86);
-		ChatManager.DrawColorCodedStringWithShadow(Main.spriteBatch, font, text.Subtitle.Value, subtitlePos, new Color(180, 180, 180) * alpha, 0, size * originMod, new(0.5f));
+		var subtitlePos = new Vector2(x, text.Author is null || text.Author.Value == string.Empty ? y + 40 * scale : y + 86 * scale);
+		ChatManager.DrawColorCodedStringWithShadow(Main.spriteBatch, font, text.Subtitle.Value, subtitlePos, new Color(180, 180, 180) * alpha, 0, size * originMod, new Vector2(0.5f) * scale);
 	}
 
 	private static void GetStartPosition(DisplayConfig.Placements placement, out float x, out float y, out Vector2 originMod)

@@ -21,6 +21,11 @@ Configs: {
 			Label: Always On Opacity
 			Tooltip: How opaque the music display is when Always On is active. Does nothing if Always On is not on.
 		}
+
+		TextScale: {
+			Label: Text Scale
+			Tooltip: Size of the display's text.
+		}
 	}
 
 	Placements: {
