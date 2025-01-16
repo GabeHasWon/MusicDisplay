@@ -54,7 +54,7 @@ internal class MusicDatabase : ModSystem
         throw new Exception("[MusicDisplay] Use the short, LocalizedText, LocalizedText, LocalizedText overload! This overload is outdated.");
     }
 
-    internal static void AddMusic(object id, object name, object author, object subTitle)
+    internal static void AddMusic(object id, object name, object author, object subTitle, object displayCondition)
     {
         if (id is not short realID)
             throw new ArgumentException("id is not a short!");
@@ -83,7 +83,16 @@ internal class MusicDatabase : ModSystem
                 throw new ArgumentException("subTitle is not a LocalizedText or a localization key!");
         }
 
+        Func<bool> realDisplayCondition = null;
+        if (displayCondition is not null)
+        {
+            if (displayCondition is Func<bool> condition)
+                realDisplayCondition = condition;
+            else
+                throw new ArgumentException("displayCondition must be a Func<bool>!");
+        }
+
         var db = ModContent.GetInstance<MusicDatabase>();
-        db._tracksById.Add(realID, new MusicText(realName, realAuthor, realSub));
+        db._tracksById.Add(realID, new MusicText(realName, realAuthor, realSub, shouldDisplay: realDisplayCondition));
     }
 }

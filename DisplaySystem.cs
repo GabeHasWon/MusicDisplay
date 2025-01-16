@@ -39,7 +39,7 @@ internal class DisplaySystem : ModSystem
 			var musicText = MusicDatabase.GetMusicText(lastMusicSlot);
             bool hide = ModContent.GetInstance<DisplayConfig>().HideUnknown;
 			
-			if (!hide || !musicText.IsUnknown)
+			if (musicText.ShouldDisplay() && (!hide || !musicText.IsUnknown))
 				SetDisplay(musicText);
         }
     }
