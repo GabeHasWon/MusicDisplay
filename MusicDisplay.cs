@@ -15,7 +15,9 @@ public class MusicDisplay : Mod
         if (str == "addmusic" && args.Length <= 4)
             MusicDatabase.AddMusic(args[1], args[2], args[3]);
         if (str == "addmusic" && args.Length == 5)
-            MusicDatabase.AddMusic(args[1], args[2], args[3], args[4]);
+            MusicDatabase.AddMusic(args[1], args[2], args[3], args[4], null);
+        if (str == "addmusic" && args.Length == 6)
+            MusicDatabase.AddMusic(args[1], args[2], args[3], args[4], args[5]);
         return null;
     }
 }
