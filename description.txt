@@ -16,3 +16,6 @@ Please consider supporting! It helps a lot! Either way, thanks for playing!
 
 If you're a mod developer and want to add compatibility, or a player and want to ask for compatibility, read this:
 https://github.com/GabeHasWon/MusicDisplay/blob/master/README.md
+
+Contributors: Angeltrisi (display condition)
+Thanks for your contribution!

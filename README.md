@@ -16,9 +16,9 @@ Adding a track is as follows:
 
 ```
 //Where display == MusicDisplay's Mod instance
-display.Call("AddMusic", short musicId, LocalizedText title, LocalizedText author, LocalizedText subtitle);
+display.Call("AddMusic", short musicId, LocalizedText title, LocalizedText author, LocalizedText subtitle, Func<bool> displayCondition);
 //OR
-display.Call("AddMusic", short musicId, string titleKey, string authorKey, string subtitleKey);
+display.Call("AddMusic", short musicId, string titleKey, string authorKey, string subtitleKey, Func<bool> displayCondition);
 ```
 
 The types of these are interchangeable, so if you really want to, you could do Language.GetText("x"), "y", "z" or whatever.
@@ -48,6 +48,9 @@ The overload that skipped the author parameter has been REMOVED. DO NOT use it, 
 For modders that used the string overloads, the mod still functions the same, though you should replace your old code with either localization keys or LocalizedTexts directly.
 
 This way, other languages have support for your content easily and update properly.
+
+
+Additionally, the new displayCondition parameter allows you to hide the display conditionally if desired. For example, making sure it doesn't overlap with other UI, doesn't block bossfights, etc.
 
 ### In-Use Example
 

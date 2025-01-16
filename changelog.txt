@@ -1,1 +1,2 @@
-﻿- Added Text Scale config option
+﻿1.2.2.4
+- Added ShouldDisplay Func<bool> to displays (thanks Angeltrisi on GitHub!) for conditional displays

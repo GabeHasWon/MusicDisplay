@@ -49,10 +49,8 @@ internal class MusicDatabase : ModSystem
         return !db._tracksById.TryGetValue(lastMusicSlot, out MusicText value) ? UnknownTrack : value;
     }
 
-    internal static void AddMusic(object id, object name, object subTitle)
-    {
-        throw new Exception("[MusicDisplay] Use the short, LocalizedText, LocalizedText, LocalizedText overload! This overload is outdated.");
-    }
+    internal static void AddMusic(object id, object name, object subTitle) 
+        => throw new Exception("[MusicDisplay] Use the short, LocalizedText, LocalizedText, LocalizedText overload! This overload is outdated.");
 
     internal static void AddMusic(object id, object name, object author, object subTitle, object displayCondition)
     {
@@ -84,6 +82,7 @@ internal class MusicDatabase : ModSystem
         }
 
         Func<bool> realDisplayCondition = null;
+
         if (displayCondition is not null)
         {
             if (displayCondition is Func<bool> condition)
