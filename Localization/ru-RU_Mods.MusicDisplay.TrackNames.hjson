@@ -1,0 +1,100 @@
+VanillaByLine: от Скотта Ллойда Шелли
+OtherworldByLine: от Джеффа Бродбента, Джонатана ван ден Вейнгаардена и Джеймса Ханнигана
+OtherworldJeffBall: от Джеффа Бродбента, Джонатан ван ден Вейнгаардена, Джеймса Ханнигана и Джеффа Болла
+OtherworldTinaGuo: от Джеффа Бродбента, Джонатана ван ден Вейнгаардена, Джеймса Ханнигана и Тины Гуо
+OtherworldFrankKlepacki: от Джеффа Бродбената, Джонатана ван ден Вейнгаардена, Джеймса Ханнигана и Фрэнка Клепаки
+TerrariaName: Terraria
+OtherworldName: Terraria Otherworld
+UnknownTrack: (Неизвестный трек)
+
+Vanilla: {
+	1: Overworld Day
+	2: Eerie
+	3: Night
+	4: Underground
+	5: Boss1
+	6: Title
+	7: Jungle
+	8: Corruption
+	9: The Hallow
+	10: Underground Corruption
+	11: Underground Hallow
+	12: Boss 2
+	13: Boss 3
+	14: Snow
+	15: Space
+	16: Crimson
+	17: Boss 4
+	18: Alt Overworld Day
+	19: Rain
+	20: Ice
+	21: Desert
+	22: Ocean
+	23: Dungeon
+	24: Plantera
+	25: Boss 5
+	26: Temple
+	27: Eclipse
+	28: Rain Sound Effect
+	29: Mushrooms
+	30: Pumpkin Moon
+	31: Alt Underground
+	32: Frost Moon
+	33: Underground Crimson
+	34: The Towers
+	35: Pirate Invasion
+	36: Hell
+	37: Martian Madness
+	38: Lunar Boss
+	39: Goblin Invasion
+	40: Sandstorm
+	41: Old Ones Army
+	42: Space Day
+	43: Ocean Night
+	44: Windy Day
+	46: Town Day
+	47: Town Night
+	48: Slime Rain
+	49: Day Remix
+	50: Menu Music
+	52: Monsoon
+	53: Graveyard
+	54: Jungle Underground
+	55: Jungle Night
+	56: Queen Slime
+	57: Empress Of Light
+	58: Duke Fishron
+	59: Morning Rain
+	60: Console Menu
+	61: Underground Desert
+	62: Prelude (Дождь — Otherworld)
+	63: Every Adventure Has a Beginning (День — Otherworld)
+	64: Night Falls, Darkness Emerge (Ночь — Otherworld)
+	65: Below the Surface (Подземелье — Otherworld)
+	66: Secret of the Sands (Пустыня — Otherworld)
+	67: Enchanted Blue (Океан — Otherworld)
+	68: Celestial Caverns (Грибной биом — Otherworld)
+	69: Ancient Citadel (Темница — Otherworld)
+	70: The Endless Void (Космос — Otherworld)
+	71: Journey to the Core (Преисподняя — Otherworld)
+	72: Glimmers of Vibrance (Снега — Otherworld)
+	73: Shadows of Corruption (Искажение — Otherworld)
+	74: Decay and Corrosion (Пещеры искажения — Otherworld)
+	75: Blood Crawlers (Багрянец — Otherworld)
+	76: Crimson Chasm (Пещеры багрянца — Otherworld)
+	77: A Sweet Menace (Ледяные пещеры — Otherworld)
+	78: Twisted Virtue (Пещеры освящения — Otherworld)
+	79: Enter Darkness (Жуть — Otherworld)
+	80: Sinkholes of Darkness (Босс 2 — Otherworld)
+	81: Behold the OctoEye (Босс 1 — Otherworld)
+	82: Fighting off the Invasion (Вторжение — Otherworld)
+	83: Fighting the Night (Башни — Otherworld)
+	84: Consumed by Darkness (Лунный босс — Otherworld)
+	85: Rage Of Tarunnk (Плантера — Otherworld)
+	86: Sky Guardian (Джунгли — Otherworld)
+	87: Wall of Flesh (Стена плоти — Otherworld)
+	88: Postlude - Credits (Освящение — Otherworld)
+	89: Credits
+	90: Deerclops
+	91: Shimmer
+}
