@@ -10,7 +10,7 @@ internal class MusicDatabase : ModSystem
 {
     private static MusicText UnknownTrack;
 
-    Dictionary<short, MusicText> _tracksById = [];
+    private Dictionary<short, MusicText> _tracksById = [];
 
     public override void PostAddRecipes()
     {
@@ -45,7 +45,6 @@ internal class MusicDatabase : ModSystem
     internal static MusicText GetMusicText(short lastMusicSlot)
     {
         var db = ModContent.GetInstance<MusicDatabase>();
-
         return !db._tracksById.TryGetValue(lastMusicSlot, out MusicText value) ? UnknownTrack : value;
     }
 
@@ -93,5 +92,17 @@ internal class MusicDatabase : ModSystem
 
         var db = ModContent.GetInstance<MusicDatabase>();
         db._tracksById.Add(realID, new MusicText(realName, realAuthor, realSub, shouldDisplay: realDisplayCondition));
+    }
+
+    internal static object GetMusicInfo(short id)
+    {
+        if (id == 0)
+            throw new ArgumentException("A music ID of 0 isn't valid!");
+
+        if (!ModContent.GetInstance<MusicDatabase>()._tracksById.TryGetValue(id, out var text) || text.IsUnknown)
+            throw new ArgumentException($"Music ID {id} isn't registered, or is the placeholder \"Unknown\" track.");
+
+        object[] info = [text.MainText, text.Author, text.Subtitle, text.ShouldDisplay];
+        return info;
     }
 }

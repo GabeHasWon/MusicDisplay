@@ -1,2 +1,2 @@
-﻿1.2.2.4
-- Added ShouldDisplay Func<bool> to displays (thanks Angeltrisi on GitHub!) for conditional displays
+﻿1.2.2.5
+- Added option to get registered music info with MusicDisplay.Call("GetMusicInfo") or ("GetMusicText")
