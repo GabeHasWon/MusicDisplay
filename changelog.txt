@@ -1,2 +1,4 @@
-﻿1.2.2.5
-- Added option to get registered music info with MusicDisplay.Call("GetMusicInfo") or ("GetMusicText")
+﻿1.2.2.6
+- Updated Russian localization I think
+
+I haven't checked that in a very long time. Thanks Nexora, hopefully I didn't cause a major issue! Whoops!
