@@ -20,6 +20,8 @@ public class MusicDisplay : Mod
                 MusicDatabase.AddMusic(args[1], args[2], args[3], args[4], null);
             if (args.Length == 6)
                 MusicDatabase.AddMusic(args[1], args[2], args[3], args[4], args[5]);
+            if (args.Length == 7)
+                MusicDatabase.AddMusic(args[1], args[2], args[3], args[4], args[5], args[6]);
         }
         else if (str == "getmusictext")
             return MusicDatabase.GetMusicText((short)args[1]);

@@ -35,21 +35,22 @@ internal static class DisplayDrawing
 		string title = Language.GetTextValue("Mods.MusicDisplay.CurrentMusic");
 		var font = FontAssets.DeathText.Value;
 		float scale = ModContent.GetInstance<DisplayConfig>().TextScale;
+		Color[] colors = text.Colors;
 
 		y -= scale * 50;
 
         var size = FontAssets.DeathText.Value.MeasureString(title);
-		ChatManager.DrawColorCodedStringWithShadow(Main.spriteBatch, font, title, new Vector2(x, y - 40 * scale), new Color(120, 120, 120) * alpha, 0, size * originMod, new Vector2(0.4f) * scale);
+		ChatManager.DrawColorCodedStringWithShadow(Main.spriteBatch, font, title, new Vector2(x, y - 40 * scale), colors[MusicText.TitleSlot] * alpha, 0, size * originMod, new Vector2(0.4f) * scale);
 
 		size = FontAssets.DeathText.Value.MeasureString(text.MainText.Value);
-		ChatManager.DrawColorCodedStringWithShadow(Main.spriteBatch, font, text.MainText.Value, new Vector2(x, y), Color.White * alpha, 0, size * originMod, new Vector2(0.85f) * scale);
+		ChatManager.DrawColorCodedStringWithShadow(Main.spriteBatch, font, text.MainText.Value, new Vector2(x, y), colors[MusicText.MainSlot] * alpha, 0, size * originMod, new Vector2(0.85f) * scale);
 
 		size = FontAssets.DeathText.Value.MeasureString(text.Author.Value);
-		ChatManager.DrawColorCodedStringWithShadow(Main.spriteBatch, font, text.Author.Value, new Vector2(x, y + 46 * scale), new Color(230, 230, 230) * alpha, 0, size * originMod, new Vector2(0.65f) * scale);
+		ChatManager.DrawColorCodedStringWithShadow(Main.spriteBatch, font, text.Author.Value, new Vector2(x, y + 46 * scale), colors[MusicText.AuthorSlot] * alpha, 0, size * originMod, new Vector2(0.65f) * scale);
 
 		size = FontAssets.DeathText.Value.MeasureString(text.Subtitle.Value);
 		var subtitlePos = new Vector2(x, text.Author is null || text.Author.Value == string.Empty ? y + 40 * scale : y + 86 * scale);
-		ChatManager.DrawColorCodedStringWithShadow(Main.spriteBatch, font, text.Subtitle.Value, subtitlePos, new Color(180, 180, 180) * alpha, 0, size * originMod, new Vector2(0.5f) * scale);
+		ChatManager.DrawColorCodedStringWithShadow(Main.spriteBatch, font, text.Subtitle.Value, subtitlePos, colors[MusicText.SubtitleSlot] * alpha, 0, size * originMod, new Vector2(0.5f) * scale);
 	}
 
 	private static void GetStartPosition(DisplayConfig.Placements placement, out float x, out float y, out Vector2 originMod)

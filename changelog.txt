@@ -1,4 +1,2 @@
-﻿1.2.2.6
-- Updated Russian localization I think
-
-I haven't checked that in a very long time. Thanks Nexora, hopefully I didn't cause a major issue! Whoops!
+﻿1.2.2.7
+- Added Color[] option to Mod.Call for AddMusic; this allows end users to change the color of their Music Display showcases with proper fadein/out

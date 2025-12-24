@@ -1,10 +1,13 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace MusicDisplay;
+
+#nullable enable
 
 internal class MusicDatabase : ModSystem
 {
@@ -20,7 +23,7 @@ internal class MusicDatabase : ModSystem
             var byLine = Language.GetText("Mods.MusicDisplay.TrackNames.VanillaByLine");
             var terraria = Language.GetText("Mods.MusicDisplay.TrackNames.TerrariaName");
 
-            if (i >= MusicID.OtherworldlyRain && i <= MusicID.OtherworldlyHallow)
+            if (i is >= MusicID.OtherworldlyRain and <= MusicID.OtherworldlyHallow)
             {
                 terraria = Language.GetText("Mods.MusicDisplay.TrackNames.OtherworldName");
 
@@ -40,7 +43,7 @@ internal class MusicDatabase : ModSystem
         UnknownTrack = new MusicText(Language.GetText("Mods.MusicDisplay.TrackNames.UnknownTrack"), LocalizedText.Empty, LocalizedText.Empty, true);
     }
 
-    public override void Unload() => _tracksById = null;
+    public override void Unload() => _tracksById = null!;
 
     internal static MusicText GetMusicText(short lastMusicSlot)
     {
@@ -51,7 +54,7 @@ internal class MusicDatabase : ModSystem
     internal static void AddMusic(object id, object name, object subTitle) 
         => throw new Exception("[MusicDisplay] Use the short, LocalizedText, LocalizedText, LocalizedText overload! This overload is outdated.");
 
-    internal static void AddMusic(object id, object name, object author, object subTitle, object displayCondition)
+    internal static void AddMusic(object id, object name, object author, object subTitle, object displayCondition, object? color = null)
     {
         if (id is not short realID)
             throw new ArgumentException("id is not a short!");
@@ -80,7 +83,7 @@ internal class MusicDatabase : ModSystem
                 throw new ArgumentException("subTitle is not a LocalizedText or a localization key!");
         }
 
-        Func<bool> realDisplayCondition = null;
+        Func<bool>? realDisplayCondition = null;
 
         if (displayCondition is not null)
         {
@@ -91,7 +94,7 @@ internal class MusicDatabase : ModSystem
         }
 
         var db = ModContent.GetInstance<MusicDatabase>();
-        db._tracksById.Add(realID, new MusicText(realName, realAuthor, realSub, shouldDisplay: realDisplayCondition));
+        db._tracksById.Add(realID, new MusicText(realName, realAuthor, realSub, shouldDisplay: realDisplayCondition, colors: (Color[]?)color));
     }
 
     internal static object GetMusicInfo(short id)

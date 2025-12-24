@@ -34,9 +34,21 @@ Configs: {
 
 	Placements: {
 		Tooltip: ""
-		Top.Label: сверху
-		Bottom.Label: снизу
-		Left.Label: слева
+
+		Top: {
+			Label: сверху
+			// Tooltip: ""
+		}
+
+		Bottom: {
+			Label: снизу
+			// Tooltip: ""
+		}
+
+		Left: {
+			Label: слева
+			// Tooltip: ""
+		}
 	}
 }
 
