@@ -27,6 +27,12 @@ public class MusicDisplay : Mod
             return MusicDatabase.GetMusicText((short)args[1]);
         else if (str == "getmusicinfo")
             return MusicDatabase.GetMusicInfo((short)args[1]);
+        else if (str == "trygetmusicinfo")
+            return MusicDatabase.TryGetMusicInfo((short)args[1]);
+        else if (str == "hasmusic")
+            return MusicDatabase.HasMusic((short)args[1]);
+        else if (str == "addpredraw")
+            return MusicDatabase.AddPreDraw(args[1..]);
 
         return null;
     }
