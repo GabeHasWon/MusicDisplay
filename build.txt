@@ -1,4 +1,4 @@
 displayName = Music Display
 author = GabeHasWon
-version = 1.2.3.1
+version = 1.2.3.2
 side = Client

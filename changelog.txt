@@ -1,2 +1,4 @@
-﻿1.2.3.1
-- Added TryGetMusicInfo, HasMusic hooks for safety checks for other mods
+﻿1.2.3.2
+- Added "Custom" position option for displays, alongside position selector
+- Added preview for the display when in config
+- Adjusted display drawing a bit in order to make it look a bit nicer and more consistent.

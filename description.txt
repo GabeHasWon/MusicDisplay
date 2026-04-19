@@ -1,9 +1,8 @@
 --- Music Display ---
-for tModLoader 1.4.3 and 1.4.4
 by GabeHasWon
 
 A simple mod that shows the currently playing music on-screen when the music changes.
-This has support for all vanilla tracks, alongside support for other mods to add in their own.
+This has support for all vanilla tracks, alongside support for other mods to add in their own, customize them, and more.
 Enjoy!
 
 - Socials -

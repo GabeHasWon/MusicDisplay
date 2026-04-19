@@ -30,6 +30,11 @@ Configs: {
 			Label: Масштаб текста
 			Tooltip: Определяет размер текста в информации о трекеы
 		}
+
+		TextPlacement: {
+			// Label: Text Placement
+			// Tooltip: ""
+		}
 	}
 
 	Placements: {
@@ -47,6 +52,11 @@ Configs: {
 
 		Left: {
 			Label: слева
+			// Tooltip: ""
+		}
+
+		Custom: {
+			// Label: Custom
 			// Tooltip: ""
 		}
 	}
