@@ -11,6 +11,11 @@ namespace MusicDisplay;
 
 internal class MusicDatabase : ModSystem
 {
+    internal delegate bool PreDisplay(ref string nowText, ref string title, ref string author, ref string sub, ref float baseScale, Color[] colors, ref float delta, float defaultMaxDelta,
+        ref float x, ref float y, ref Vector2 originMod, ref float baseAlpha, float? alwaysOn);
+
+    internal static Dictionary<short, PreDisplay> PreDrawById = [];
+
     private static MusicText UnknownTrack;
 
     private Dictionary<short, MusicText> _tracksById = [];
@@ -31,7 +36,7 @@ internal class MusicDatabase : ModSystem
                     byLine = Language.GetText("Mods.MusicDisplay.TrackNames.OtherworldTinaGuo");
                 else if (i == MusicID.OtherworldlyUnderground)
                     byLine = Language.GetText("Mods.MusicDisplay.TrackNames.OtherworldJeffBall");
-                else if (i == MusicID.OtherworldlyBoss2 || i == MusicID.OtherworldlyLunarBoss)
+                else if (i is MusicID.OtherworldlyBoss2 or MusicID.OtherworldlyLunarBoss)
                     byLine = Language.GetText("Mods.MusicDisplay.TrackNames.OtherworldFrankKlepacki");
                 else
                     byLine = Language.GetText("Mods.MusicDisplay.TrackNames.OtherworldByLine");
@@ -43,7 +48,11 @@ internal class MusicDatabase : ModSystem
         UnknownTrack = new MusicText(Language.GetText("Mods.MusicDisplay.TrackNames.UnknownTrack"), LocalizedText.Empty, LocalizedText.Empty, true);
     }
 
-    public override void Unload() => _tracksById = null!;
+    public override void Unload()
+    {
+        _tracksById = null!;
+        PreDrawById = null!;
+    }
 
     internal static MusicText GetMusicText(short lastMusicSlot)
     {
@@ -107,5 +116,48 @@ internal class MusicDatabase : ModSystem
 
         object[] info = [text.MainText, text.Author, text.Subtitle, text.ShouldDisplay];
         return info;
+    }
+
+    internal static object TryGetMusicInfo(short id)
+    {
+        if (id == 0)
+            return (false, Array.Empty<object>(), "A music ID of 0 isn't valid!");
+
+        if (!ModContent.GetInstance<MusicDatabase>()._tracksById.TryGetValue(id, out var text) || text.IsUnknown)
+            return (false, Array.Empty<object>(), $"Music ID {id} isn't registered, or is the placeholder \"Unknown\" track.");
+
+        object[] info = [text.MainText, text.Author, text.Subtitle, text.ShouldDisplay];
+        return (true, info, "");
+    }
+
+    internal static bool HasMusic(short id) => id != 0 && ModContent.GetInstance<MusicDatabase>()._tracksById.ContainsKey(id);
+
+    internal static object AddPreDraw(object[] objects)
+    {
+        if (objects.Length < 2)
+            throw new ArgumentException("You must pass an appropriate delegate and either a short[] or short!");
+
+        const string DelegateBindFailureMessage = "preDrawHook must be a delegate matching the signature " +
+            "(ref string mainText, ref string author, ref string subTitle, ref string nowPlaying, Color[] colors)!";
+
+        if (objects[0] is not Delegate preDraw)
+            throw new ArgumentException(DelegateBindFailureMessage);
+
+        if ((PreDisplay)Delegate.CreateDelegate(typeof(PreDisplay), preDraw.Method) is not PreDisplay displayDelegate)
+            throw new ArgumentException(DelegateBindFailureMessage);
+
+        short[] ids;
+
+        if (objects[0] is short id)
+            ids = [id];
+        else if (objects[1] is short[] convIds)
+            ids = convIds;
+        else
+            throw new ArgumentException("Second argument must be either a short[] or short!");
+
+        foreach (short newId in ids)
+            PreDrawById.Add(newId, displayDelegate);
+
+        return true;
     }
 }

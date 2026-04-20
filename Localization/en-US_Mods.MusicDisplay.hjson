@@ -26,6 +26,11 @@ Configs: {
 			Label: Text Scale
 			Tooltip: Size of the display's text.
 		}
+
+		TextPlacement: {
+			Label: Text Placement
+			Tooltip: ""
+		}
 	}
 
 	Placements: {
@@ -43,6 +48,11 @@ Configs: {
 
 		Left: {
 			Label: Left
+			Tooltip: ""
+		}
+
+		Custom: {
+			Label: Custom
 			Tooltip: ""
 		}
 	}

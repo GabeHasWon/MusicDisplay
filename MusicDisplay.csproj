@@ -7,4 +7,10 @@
   </PropertyGroup>
   <ItemGroup>
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.2" PrivateAssets="all" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Update="$(tMLSteamPath)$(tMLPath)" Publicize="true" />
+  </ItemGroup>
 </Project>

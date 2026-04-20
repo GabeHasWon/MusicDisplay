@@ -1,2 +1,4 @@
-﻿1.2.2.7
-- Added Color[] option to Mod.Call for AddMusic; this allows end users to change the color of their Music Display showcases with proper fadein/out
+﻿1.2.3.2
+- Added "Custom" position option for displays, alongside position selector
+- Added preview for the display when in config
+- Adjusted display drawing a bit in order to make it look a bit nicer and more consistent.
