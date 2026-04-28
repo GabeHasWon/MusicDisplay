@@ -29,7 +29,11 @@ Configs: {
 
 		TextPlacement: {
 			Label: 文本位置
-			Tooltip: ""
+			Tooltip:
+				'''
+				控制音乐曲目显示的位置。
+				仅当“显示位置”设置为“自定义”时才有效。
+				'''
 		}
 	}
 
