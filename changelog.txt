@@ -1,4 +1,6 @@
-﻿1.2.3.2
-- Added "Custom" position option for displays, alongside position selector
-- Added preview for the display when in config
-- Adjusted display drawing a bit in order to make it look a bit nicer and more consistent.
+﻿1.2.3.3
+- Added Mandarin localization (thanks Linnnnna!)
+- Improved Russian localization (thanks alinahvoshch!)
+- Added safety check to music display drawing
+	This also reports issues to the logs, which should make testing easier
+- Added some nice debugging tools
