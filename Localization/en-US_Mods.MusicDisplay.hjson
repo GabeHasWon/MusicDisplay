@@ -29,7 +29,11 @@ Configs: {
 
 		TextPlacement: {
 			Label: Text Placement
-			Tooltip: ""
+			Tooltip:
+				'''
+				Controls the placement of the music track display.
+				Works only when Display Placement is set to Custom.
+				'''
 		}
 	}
 
