@@ -1,0 +1,65 @@
+Configs: {
+	DisplayConfig: {
+		DisplayName: Display配置
+
+		HideUnknown: {
+			Label: 隐藏未知音乐
+			Tooltip: 如果为true，未知的音乐曲目将不会显示。否则，将显示“未知曲目”来替代曲目名称。
+		}
+
+		Placement: {
+			Label: 显示位置
+			Tooltip: 控制展示的显示位置。
+		}
+
+		AlwaysOn: {
+			Label: 始终显示
+			Tooltip: 如果为true，音乐曲目将始终显示。
+		}
+
+		AlwaysOnOpacity: {
+			Label: 始终显示透明度
+			Tooltip: 当“始终显示”激活时，音乐显示的不透明度。如果“始终开启”未激活，则无效。
+		}
+
+		TextScale: {
+			Label: 文本缩放
+			Tooltip: 显示的文本的大小。
+		}
+
+		TextPlacement: {
+			Label: 文本位置
+			Tooltip:
+				'''
+				控制音乐曲目显示的位置。
+				仅当“显示位置”设置为“自定义”时才有效。
+				'''
+		}
+	}
+
+	Placements: {
+		Tooltip: ""
+
+		Top: {
+			Label: 顶部
+			Tooltip: ""
+		}
+
+		Bottom: {
+			Label: 底部
+			Tooltip: ""
+		}
+
+		Left: {
+			Label: 左侧
+			Tooltip: ""
+		}
+
+		Custom: {
+			Label: 自定义
+			Tooltip: ""
+		}
+	}
+}
+
+CurrentMusic: 当前音乐：

@@ -1,0 +1,103 @@
+VanillaByLine: 作者：Scott Lloyd Shelly
+OtherworldByLine: 作者：Jeff Broadbent、Jonathan van den Wijngaarden和James Hannigan
+OtherworldJeffBall: 作者：Jeff Broadbent、Jonathan van den Wijngaarden、James Hannigan和Jeff Ball
+OtherworldTinaGuo: 作者：Jeff Broadbent、Jonathan van den Wijngaarden、James Hannigan和Tina Guo
+OtherworldFrankKlepacki:作者：Jeff Broadbent、Jonathan van den Wijngaarden、James Hannigan和Frank Klepacki
+TerrariaName: 泰拉瑞亚
+OtherworldName: 泰拉瑞亚：异界
+UnknownTrack:（未知曲目）
+SampleTrack: 示例名称
+SampleMusician: 示例作曲
+MusicDisplay: Music Display
+
+Vanilla: {
+	1: Overworld Day
+	2: Eerie
+	3: Night
+	4: Underground
+	5: Boss1
+	6: Title
+	7: Jungle
+	8: Corruption
+	9: The Hallow
+	10: Underground Corruption
+	11: Underground Hallow
+	12: Boss 2
+	13: Boss 3
+	14: Snow
+	15: Space
+	16: Crimson
+	17: Boss 4
+	18: Alt Overworld Day
+	19: Rain
+	20: Ice
+	21: Desert
+	22: Ocean
+	23: Dungeon
+	24: Plantera
+	25: Boss 5
+	26: Temple
+	27: Eclipse
+	28: Rain Sound Effect
+	29: Mushrooms
+	30: Pumpkin Moon
+	31: Alt Underground
+	32: Frost Moon
+	33: Underground Crimson
+	34: The Towers
+	35: Pirate Invasion
+	36: Hell
+	37: Martian Madness
+	38: Lunar Boss
+	39: Goblin Invasion
+	40: Sandstorm
+	41: Old Ones Army
+	42: Space Day
+	43: Ocean Night
+	44: Windy Day
+	46: Town Day
+	47: Town Night
+	48: Slime Rain
+	49: Day Remix
+	50: Menu Music
+	52: Monsoon
+	53: Graveyard
+	54: Jungle Underground
+	55: Jungle Night
+	56: Queen Slime
+	57: Empress Of Light
+	58: Duke Fishron
+	59: Morning Rain
+	60: Console Menu
+	61: Underground Desert
+	62: Prelude（Rain 异界版）
+	63: Every Adventure Has a Beginning（Day 异界版）
+	64: Night Falls, Darkness Emerge（Night 异界版）
+	65: Below the Surface（Underground 异界版）
+	66: Secret of the Sands（Desert 异界版）
+	67: Enchanted Blue（Ocean 异界版）
+	68: Celestial Caverns（Mushrooms 异界版）
+	69: Ancient Citadel（Dungeon 异界版）
+	70: The Endless Void（Space 异界版）
+	71: Journey to the Core（Underworld 异界版）
+	72: Glimmers of Vibrance（Snow 异界版）
+	73: Shadows of Corruption（Corruption 异界版）
+	74: Decay and Corrosion（Underground Corruption 异界版）
+	75: Blood Crawlers（Crimson 异界版）
+	76: Crimson Chasm（Underground Crimson 异界版）
+	77: A Sweet Menace（Ice 异界版）
+	78: Twisted Virtue（Underground Hallow 异界版）
+	79: Enter Darkness（Eerie 异界版）
+	80: Sinkholes of Darkness（Boss 2 异界版）
+	81: Behold the OctoEye（Boss 1 异界版）
+	82: Fighting off the Invasion（Invasion 异界版）
+	83: Fighting the Night（Towers 异界版）
+	84: Consumed by Darkness（Lunar Boss 异界版）
+	85: Rage Of Tarunnk（Plantera 异界版）
+	86: Sky Guardian（Jungle 异界版）
+	87: Otherworldly Wall of Flesh
+	88: Postlude - Credits（Hallow 异界版）
+	89: Credits
+	90: Deerclops
+	91: Shimmer
+}
