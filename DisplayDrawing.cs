@@ -14,9 +14,13 @@ namespace MusicDisplay;
 /// </summary>
 internal static class DisplayDrawing
 {
+	public static bool WroteError = false;
+
 	public static void DrawMusicDisplay(float delta, ref float alpha, MusicText text, float? forceDrawAlpha = null, DisplayConfig configInstance = null!)
 	{
 		configInstance ??= ModContent.GetInstance<DisplayConfig>();
+
+		MusicDatabase.HasMusic(0);
 
         if (!configInstance.AlwaysOn && forceDrawAlpha is null) //Sets alpha only if we need to draw fadeout
 		{
@@ -40,6 +44,23 @@ internal static class DisplayDrawing
 		var font = FontAssets.DeathText.Value;
 		float scale = configInstance.TextScale;
 		Color[] colors = text.Colors;
+
+		if (text.MainText is null || text.Author is null || text.Subtitle is null)
+		{
+			if (!WroteError)
+			{
+				ModContent.GetInstance<MusicDisplay>().Logger.Error(Language.GetTextValue("Mods.MusicDisplay.Errors.Detected"));
+				ModContent.GetInstance<MusicDisplay>().Logger.Error(
+					Language.GetTextValue("Mods.MusicDisplay.Errors.Info", text.MainText?.Value ?? "null", text.Author?.Value ?? "null", text.Subtitle?.Value ?? "null"));
+
+				Main.NewText(Language.GetTextValue("Mods.MusicDisplay.Errors.Notice"));
+
+				WroteError = true;
+			}
+
+			return;
+		}
+
 		string main = text.MainText.Value;
 		string author = text.Author.Value;
 		string subTitle = text.Subtitle.Value;

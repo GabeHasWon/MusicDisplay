@@ -63,3 +63,9 @@ Configs: {
 }
 
 CurrentMusic: Текущий трек:
+
+Errors: {
+	// Detected: Invalid MusicText detected. Music Display requires main text, author and subtitle to be populated.
+	// Info: MusicText info: {0}, {1}, {2}"
+	// Notice: A mod has added an invalid music entry! Report this issue and check logs. This error only appears once per game restart.
+}

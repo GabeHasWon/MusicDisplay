@@ -40,4 +40,6 @@ internal readonly struct MusicText
             Colors = [.. allColors];
         }
     }
+
+    public readonly override string ToString() => $"main: {MainText?.Value ?? "null"}, author: {Author?.Value ?? "null"}, subtitle: {Subtitle.Value ?? "null"}";
 }
