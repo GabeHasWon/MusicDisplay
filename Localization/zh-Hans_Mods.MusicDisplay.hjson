@@ -65,7 +65,7 @@ Configs: {
 CurrentMusic: 当前音乐：
 
 Errors: {
-	// Detected: Invalid MusicText detected. Music Display requires main text, author and subtitle to be populated.
-	// Info: MusicText info: {0}, {1}, {2}"
-	// Notice: A mod has added an invalid music entry! Report this issue and check logs. This error only appears once per game restart.
+	Detected: 检测到无效的MusicText。Music Display需要输入主文本、作者和副标题。
+	Info: MusicText信息：{0}，{1}，{2}"
+	Notice: 一个模组添加了一个无效的音乐条目！请报告此问题并检查日志。此错误在每次游戏重新启动时只出现一次。
 }
