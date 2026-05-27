@@ -130,17 +130,7 @@ internal class MusicDatabase : ModSystem
         return (true, info, "");
     }
 
-    internal static bool HasMusic(short id)
-    {
-        string s = "";
-
-        foreach (var track in ModContent.GetInstance<MusicDatabase>()._tracksById)
-        {
-            s += track.Key + " : " + track.Value.ToString() + "\n";
-        }
-
-        return id != 0 && ModContent.GetInstance<MusicDatabase>()._tracksById.ContainsKey(id);
-    }
+    internal static bool HasMusic(short id) => id != 0 && ModContent.GetInstance<MusicDatabase>()._tracksById.ContainsKey(id);
 
     internal static object AddPreDraw(object[] objects)
     {
