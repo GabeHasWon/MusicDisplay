@@ -66,6 +66,6 @@ CurrentMusic: 当前音乐：
 
 Errors: {
 	Detected: 检测到无效的MusicText。Music Display需要输入主文本、作者和副标题。
-	Info: MusicText信息：{0}，{1}，{2}"
+	Info: MusicText信息：{0}，{1}，{2}
 	Notice: 一个模组添加了一个无效的音乐条目！请报告此问题并检查日志。此错误在每次游戏重新启动时只出现一次。
 }
