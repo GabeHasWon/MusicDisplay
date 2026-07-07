@@ -15,7 +15,7 @@ public class MusicDisplay : Mod
         if (str == "addmusic")
         {
             if (args.Length <= 4)
-                MusicDatabase.AddMusic(args[1], args[2], args[3]);
+                throw new ArgumentException("[MusicDisplay] AddMusic requires at least 5 arguments (7 max)!");
             if (args.Length == 5)
                 MusicDatabase.AddMusic(args[1], args[2], args[3], args[4], null);
             if (args.Length == 6)

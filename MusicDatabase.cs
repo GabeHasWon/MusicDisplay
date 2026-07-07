@@ -11,8 +11,8 @@ namespace MusicDisplay;
 
 internal class MusicDatabase : ModSystem
 {
-    internal delegate bool PreDisplay(ref string nowText, ref string title, ref string author, ref string sub, ref float baseScale, Color[] colors, ref float delta, float defaultMaxDelta,
-        ref float x, ref float y, ref Vector2 originMod, ref float baseAlpha, float? alwaysOn);
+    internal delegate bool PreDisplay(ref string nowText, ref string title, ref string author, ref string sub, ref float baseScale, Color[] colors, ref float delta, 
+        float defaultMaxDelta, ref float x, ref float y, ref Vector2 originMod, ref float baseAlpha, float? alwaysOn);
 
     internal static Dictionary<short, PreDisplay> PreDrawById = [];
 
@@ -60,20 +60,21 @@ internal class MusicDatabase : ModSystem
         return !db._tracksById.TryGetValue(lastMusicSlot, out MusicText value) ? UnknownTrack : value;
     }
 
-    internal static void AddMusic(object id, object name, object subTitle) 
-        => throw new Exception("[MusicDisplay] Use the short, LocalizedText, LocalizedText, LocalizedText overload! This overload is outdated.");
-
     internal static void AddMusic(object id, object name, object author, object subTitle, object displayCondition, object? color = null)
     {
+        const string Prefix = "[Music Display] AddMusic: ";
+
         if (id is not short realID)
-            throw new ArgumentException("id is not a short!");
+            throw new ArgumentException(Prefix + "id is not a short!");
+
+        CheckIdValid(realID);
 
         if (author is not LocalizedText realAuthor)
         {
             if (author is string strAuth)
                 realAuthor = Language.GetText(strAuth);
             else
-                throw new ArgumentException("author is not a LocalizedText or a localization key!");
+                throw new ArgumentException(Prefix + "author is not a LocalizedText or a localization key!");
         }
 
         if (name is not LocalizedText realName)
@@ -81,7 +82,7 @@ internal class MusicDatabase : ModSystem
             if (name is string strName)
                 realName = Language.GetText(strName);
             else
-                throw new ArgumentException("name is not a LocalizedText or a localization key!");
+                throw new ArgumentException(Prefix + "name is not a LocalizedText or a localization key!");
         }
 
         if (subTitle is not LocalizedText realSub)
@@ -89,7 +90,7 @@ internal class MusicDatabase : ModSystem
             if (subTitle is string strSub)
                 realSub = Language.GetText(strSub);
             else
-                throw new ArgumentException("subTitle is not a LocalizedText or a localization key!");
+                throw new ArgumentException(Prefix + "subTitle is not a LocalizedText or a localization key!");
         }
 
         Func<bool>? realDisplayCondition = null;
@@ -99,17 +100,30 @@ internal class MusicDatabase : ModSystem
             if (displayCondition is Func<bool> condition)
                 realDisplayCondition = condition;
             else
-                throw new ArgumentException("displayCondition must be a Func<bool>!");
+                throw new ArgumentException(Prefix + "displayCondition must be a Func<bool>!");
         }
 
         var db = ModContent.GetInstance<MusicDatabase>();
         db._tracksById.Add(realID, new MusicText(realName, realAuthor, realSub, shouldDisplay: realDisplayCondition, colors: (Color[]?)color));
     }
 
+    private static void CheckIdValid(short realID)
+    {
+        const string Prefix = "[MusicDisplay] Music ID passed in";
+
+        if (realID == 0)
+            throw new ArgumentException(Prefix + " is 0. This is the vanilla ID for \"no music\", and cannot have data associated with it.");
+
+        if (realID == -1)
+            throw new ArgumentException(Prefix + " is -1: this usually means the loaded music is invalid or not found. Double check your music's path.");
+
+        //if (realID < MusicID.Count)
+        //    throw new ArgumentException(Prefix + " matches a vanilla music ID. If this is intentional, instead override localization, or make a PR.");
+    }
+
     internal static object GetMusicInfo(short id)
     {
-        if (id == 0)
-            throw new ArgumentException("A music ID of 0 isn't valid!");
+        CheckIdValid(id);
 
         if (!ModContent.GetInstance<MusicDatabase>()._tracksById.TryGetValue(id, out var text) || text.IsUnknown)
             throw new ArgumentException($"Music ID {id} isn't registered, or is the placeholder \"Unknown\" track.");
@@ -120,8 +134,7 @@ internal class MusicDatabase : ModSystem
 
     internal static object TryGetMusicInfo(short id)
     {
-        if (id == 0)
-            return (false, Array.Empty<object>(), "A music ID of 0 isn't valid!");
+        CheckIdValid(id);
 
         if (!ModContent.GetInstance<MusicDatabase>()._tracksById.TryGetValue(id, out var text) || text.IsUnknown)
             return (false, Array.Empty<object>(), $"Music ID {id} isn't registered, or is the placeholder \"Unknown\" track.");
