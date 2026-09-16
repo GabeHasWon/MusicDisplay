@@ -28,6 +28,9 @@ internal class MusicDatabase : ModSystem
             var byLine = Language.GetText("Mods.MusicDisplay.TrackNames.VanillaByLine");
             var terraria = Language.GetText("Mods.MusicDisplay.TrackNames.TerrariaName");
 
+            if (i == MusicID.DayRemix)
+                byLine = Language.GetText("Mods.MusicDisplay.TrackNames.DayRemixByLine");
+
             if (i is >= MusicID.OtherworldlyRain and <= MusicID.OtherworldlyHallow)
             {
                 terraria = Language.GetText("Mods.MusicDisplay.TrackNames.OtherworldName");

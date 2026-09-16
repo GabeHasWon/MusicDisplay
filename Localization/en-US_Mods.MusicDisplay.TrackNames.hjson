@@ -3,6 +3,7 @@ OtherworldByLine: by Jeff Broadbent, Jonathan van den Wijngaarden and James Hann
 OtherworldJeffBall: by Jeff Broadbent, Jonathan van den Wijngaarden, James Hannigan and Jeff Ball
 OtherworldTinaGuo: by Jeff Broadbent, Jonathan van den Wijngaarden, James Hannigan and Tina Guo
 OtherworldFrankKlepacki: by Jeff Broadbent, Jonathan van den Wijngaarden, James Hannigan and Frank Klepacki
+DayRemixByLine: by Xenon and DSniper
 TerrariaName: Terraria
 OtherworldName: Terraria Otherworld
 UnknownTrack: (Unknown Track)
@@ -59,7 +60,8 @@ Vanilla: {
 	47: Town Night
 	48: Slime Rain
 	49: Day Remix
-	50: Menu Music
+	50: Journey's Beginning (Menu)
+	51: "{$50}"
 	52: Monsoon
 	53: Graveyard
 	54: Jungle Underground
