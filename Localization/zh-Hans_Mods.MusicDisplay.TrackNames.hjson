@@ -3,7 +3,7 @@ OtherworldByLine: 作者：Jeff Broadbent、Jonathan van den Wijngaarden和James
 OtherworldJeffBall: 作者：Jeff Broadbent、Jonathan van den Wijngaarden、James Hannigan和Jeff Ball
 OtherworldTinaGuo: 作者：Jeff Broadbent、Jonathan van den Wijngaarden、James Hannigan和Tina Guo
 OtherworldFrankKlepacki: 作者：Jeff Broadbent、Jonathan van den Wijngaarden、James Hannigan和Frank Klepacki
-// DayRemixByLine: by Xenon and DSniper
+DayRemixByLine: 作者：Xenon和DSniper
 TerrariaName: 泰拉瑞亚
 OtherworldName: 泰拉瑞亚：异界
 UnknownTrack: （未知曲目）
@@ -60,8 +60,8 @@ Vanilla: {
 	47: Town Night
 	48: Slime Rain
 	49: Day Remix
-	50: Menu Music
-	// 51: "{$50}"
+	50: Journey's Beginning（菜单）
+	51: "{$50}"
 	52: Monsoon
 	53: Graveyard
 	54: Jungle Underground
