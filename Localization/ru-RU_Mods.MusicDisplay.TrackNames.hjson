@@ -3,7 +3,7 @@ OtherworldByLine: от Джеффа Бродбента, Джонатана ва�
 OtherworldJeffBall: от Джеффа Бродбента, Джонатан ван ден Вейнгаардена, Джеймса Ханнигана и Джеффа Болла
 OtherworldTinaGuo: от Джеффа Бродбента, Джонатана ван ден Вейнгаардена, Джеймса Ханнигана и Тины Гуо
 OtherworldFrankKlepacki: от Джеффа Бродбената, Джонатана ван ден Вейнгаардена, Джеймса Ханнигана и Фрэнка Клепаки
-// DayRemixByLine: by Xenon and DSniper
+DayRemixByLine: от Xenon и DSniper
 TerrariaName: Terraria
 OtherworldName: Terraria Otherworld
 UnknownTrack: (Неизвестный трек)
@@ -60,8 +60,8 @@ Vanilla: {
 	47: Town Night
 	48: Slime Rain
 	49: Day Remix
-	50: Menu Music
-	// 51: "{$50}"
+	50: Главное меню: Journey's Beginning
+	51: "{$50}"
 	52: Monsoon
 	53: Graveyard
 	54: Jungle Underground
