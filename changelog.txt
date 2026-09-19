@@ -1,4 +1,2 @@
-﻿1.2.3.6
-- Added proper credits for the Day Remix song, by DSniper and Xenon
-- Added localization for music ID 51, Menu (No Intro)
-- Updated "Menu Music" (ID 50) to use the official name, Journey's Beginning (alongside a parenthetical Menu for clarity)
+﻿1.2.3.7
+- Updated Russian and Chinese localizations
